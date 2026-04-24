@@ -1,10 +1,13 @@
 <?php
+#error這段隱藏錯誤，而後核對登入，若不正確則輸入請先登入
     error_reporting(0);
     session_start();
     if (!$_SESSION["id"]) {
         echo "請先登入";
         echo "<meta http-equiv=REFRESH content='3, url=2.login.html'>";
     }
+        #如果正確則跳歡迎，而後出來三個超連結按鈕
+        #result則是用sql指令抓出bulletin的資料，而後在底下用html印出表格
     else{
         echo "歡迎, ".$_SESSION["id"]."[<a href=12.logout.php>登出</a>] [<a href=18.user.php>管理使用者</a>] [<a href=22.bulletin_add_form.php>新增佈告</a>]<br>";
         $conn=mysqli_connect("120.105.96.90", "immust", "immustimmust", "immust");
