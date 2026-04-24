@@ -5,7 +5,7 @@
    $result=mysqli_query($conn, "select * from user");
    #mysqli_fetch_array() 從查詢出來的資料一筆一筆抓出來
    $login=FALSE;
-#設定一個變數login=FALSE，迴圈n. 搜尋使用者，從 HTML 查詢帳號和密碼，有就把 $login 改成 TRUE
+#設定一個變數login=FALSE，迴圈搜尋使用者，從 HTML 查詢帳號和密碼，有就把 $login 改成 TRUE
    while ($row=mysqli_fetch_array($result)) {
      if (($_POST["id"]==$row["id"]) && ($_POST["pwd"]==$row["pwd"])) {
        $login=TRUE;
